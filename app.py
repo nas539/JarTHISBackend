@@ -29,6 +29,11 @@ class Recipe():
         self.Tag
 
 
+class UserSchema(ma.Schema):
+    class Meta:
+        fields = ('name', 'email', 'isAdmin', 'isLoggedIn', 'bio')
+
+users_schema = UserSchema(many=True)
 
 
 
