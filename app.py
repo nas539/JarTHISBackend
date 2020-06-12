@@ -25,9 +25,14 @@ class AdminClass:
     def admin_del_recipe(recipe) :
         recipe_to_del = recipe
         del recipe_to_del
-        print ("Recipe was deleted")  
-    
-
+        print ("Recipe was deleted") 
+        
+class Recipe():
+    def __init__(self, name, ID, AddedBy, Tag ):
+        self.name = name
+        self.ID = ID
+        self.AddedBy = AddedBy
+        self.Tag
 
 class Recipe(db.model):
     Name = db.Column(db.String(), primary_key=True)
@@ -42,18 +47,18 @@ class User(db.Model):
     isLoggedIn = db.Column(db.Boolean)
     bio = db.Column(db.String)
 
-
-
-<<<<<<< HEAD
-class Recipe():
-    def __init__(self, name, ID, AddedBy, Tag ):
+    def __init__(self, name, email, isAdmin, isLoggedIn, bio):
         self.name = name
-        self.ID = ID
-        self.AddedBy = AddedBy
-        self.Tag
+        self.email = email
+        self.isAdmin = isAdmin
+        self.isLoggedIn = isLoggedIn
+        self.bio = bio
 
-=======
->>>>>>> 96a38fa8cf997d6341a23b46c7cf340838980c52
+
+
+
+
+
 
 if __name__ == "__main__":
     app.debug = True
