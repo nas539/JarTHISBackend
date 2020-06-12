@@ -20,6 +20,15 @@ class Recipe(db.model):
     ID = db.Column(db.Integer, nullable = False
     AddedBy = db.Column(db.String(), nullable=False)
 
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullabe=False)
+    email = db.Column(db.String, nullable=True )
+    isAdmin = db.Column(db.Boolean)
+    isLoggedIn = db.Column(db.Boolean)
+    bio = db.Column(db.String)
+
+
 
 class Recipe():
     def __init__(self, name, ID, AddedBy, Tag ):
