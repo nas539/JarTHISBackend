@@ -26,7 +26,13 @@ class AdminClass:
         recipe_to_del = recipe
         del recipe_to_del
         print ("Recipe was deleted") 
-
+        
+class Recipe():
+    def __init__(self, name, ID, AddedBy, Tag ):
+        self.name = name
+        self.ID = ID
+        self.AddedBy = AddedBy
+        self.Tag
 
 class Recipe(db.model):
     Name = db.Column(db.String(), primary_key=True)
@@ -49,7 +55,9 @@ class User(db.Model):
         self.bio = bio
 
 
-git branch --set-upstream-to=origin/
+
+
+
 
 
 if __name__ == "__main__":
