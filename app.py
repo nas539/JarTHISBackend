@@ -21,6 +21,14 @@ class Recipe(db.model):
     AddedBy = db.Column(db.String(), nullable=False)
 
 
+class Recipe():
+    def __init__(self, name, ID, AddedBy, Tag ):
+        self.name = name
+        self.ID = ID
+        self.AddedBy = AddedBy
+        self.Tag
+
+
 if __name__ == "__main__":
     app.debug = True
     app.run()
