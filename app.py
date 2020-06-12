@@ -14,6 +14,7 @@ heroku = Heroku(app)
 CORS(app)
 
 
+
 class AdminClass:
     def admin_del (username) :
         user_to_del = username
@@ -28,6 +29,24 @@ class AdminClass:
     
 
 
+class Recipe(db.model):
+    Name = db.Column(db.String(), primary_key=True)
+    ID = db.Column(db.Integer, nullable = False
+    AddedBy = db.Column(db.String(), nullable=False)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullabe=False)
+    email = db.Column(db.String, nullable=True )
+    isAdmin = db.Column(db.Boolean)
+    isLoggedIn = db.Column(db.Boolean)
+    bio = db.Column(db.String)
+
+
+
+
 if __name__ == "__main__":
     app.debug = True
     app.run()
+
+
