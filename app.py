@@ -17,3 +17,10 @@ CORS(app)
 if __name__ == "__main__":
     app.debug = True
     app.run()
+
+
+
+class Recipe(db.model):
+    Name = db.Column(db.String(), primary_key=True)
+    ID = db.Column(db.Integer, nullable = False
+    AddedBy: db.Column(db.String(), nullable=False)
