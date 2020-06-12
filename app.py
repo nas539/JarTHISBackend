@@ -15,6 +15,20 @@ CORS(app)
 
 
 
+class AdminClass:
+    def admin_del (username) :
+        user_to_del = username
+        for (attribute in user):
+            del attribute
+            print("Username was deleted.")
+
+    def admin_del_recipe(recipe) :
+        recipe_to_del = recipe
+        del recipe_to_del
+        print ("Recipe was deleted")  
+    
+
+
 class Recipe(db.model):
     Name = db.Column(db.String(), primary_key=True)
     ID = db.Column(db.Integer, nullable = False
@@ -30,6 +44,7 @@ class User(db.Model):
 
 
 
+<<<<<<< HEAD
 class Recipe():
     def __init__(self, name, ID, AddedBy, Tag ):
         self.name = name
@@ -37,6 +52,8 @@ class Recipe():
         self.AddedBy = AddedBy
         self.Tag
 
+=======
+>>>>>>> 96a38fa8cf997d6341a23b46c7cf340838980c52
 
 if __name__ == "__main__":
     app.debug = True
