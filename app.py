@@ -25,8 +25,7 @@ class AdminClass:
     def admin_del_recipe(recipe) :
         recipe_to_del = recipe
         del recipe_to_del
-        print ("Recipe was deleted")  
-    
+        print ("Recipe was deleted") 
 
 
 class Recipe(db.model):
@@ -42,7 +41,15 @@ class User(db.Model):
     isLoggedIn = db.Column(db.Boolean)
     bio = db.Column(db.String)
 
+    def __init__(self, name, email, isAdmin, isLoggedIn, bio):
+        self.name = name
+        self.email = email
+        self.isAdmin = isAdmin
+        self.isLoggedIn = isLoggedIn
+        self.bio = bio
 
+
+git branch --set-upstream-to=origin/
 
 
 if __name__ == "__main__":
