@@ -48,8 +48,12 @@ class User(db.Model):
         self.isLoggedIn = isLoggedIn
         self.bio = bio
 
+class UserSchema(ma.Schema):
+    class Meta:
+        fields = ('name', 'email', 'isAdmin', 'isLoggedIn', 'bio')
 
-git branch --set-upstream-to=origin/
+users_schema = UserSchema(many=True)
+
 
 
 if __name__ == "__main__":
