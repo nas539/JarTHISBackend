@@ -14,6 +14,12 @@ heroku = Heroku(app)
 CORS(app)
 
 
+
+class Recipe(db.model):
+    Name = db.Column(db.String(), primary_key=True)
+    ID = db.Column(db.Integer, nullable = False
+    AddedBy = db.Column(db.String(), nullable=False)
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullabe=False)
@@ -23,6 +29,9 @@ class User(db.Model):
     bio = db.Column(db.String)
 
 
+
 if __name__ == "__main__":
     app.debug = True
     app.run()
+
+
