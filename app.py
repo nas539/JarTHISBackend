@@ -12,13 +12,15 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 heroku = Heroku(app)
 CORS(app)
-# he
+
+# hello
 
 
 class Recipe(db.model):
     Name = db.Column(db.String(), primary_key=True)
     ID = db.Column(db.Integer, nullable = False
     AddedBy = db.Column(db.String(), nullable=False)
+
 
 
 class Recipe():
