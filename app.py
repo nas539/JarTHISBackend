@@ -15,18 +15,14 @@ CORS(app)
 
 # hello
 
-class AdminClass:
-    def admin_del (username) :
-        user_to_del = username
-        for (attribute in user):
-            del attribute
-            print("Username was deleted.")
 
-    def admin_del_recipe(recipe) :
-        recipe_to_del = recipe
-        del recipe_to_del
-        print ("Recipe was deleted") 
-        
+class Recipe(db.model):
+    Name = db.Column(db.String(), primary_key=True)
+    ID = db.Column(db.Integer, nullable = False
+    AddedBy = db.Column(db.String(), nullable=False)
+
+
+
 class Recipe():
     def __init__(self, name, ID, AddedBy, Tag ):
         self.name = name
@@ -34,29 +30,12 @@ class Recipe():
         self.AddedBy = AddedBy
         self.Tag
 
-class Recipe(db.model):
-    Name = db.Column(db.String(), primary_key=True)
-    ID = db.Column(db.Integer, nullable = False
-    AddedBy = db.Column(db.String(), nullable=False)
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullabe=False)
-    email = db.Column(db.String, nullable=True )
-    isAdmin = db.Column(db.Boolean)
-    isLoggedIn = db.Column(db.Boolean)
-    bio = db.Column(db.String)
+class UserSchema(ma.Schema):
+    class Meta:
+        fields = ('name', 'email', 'isAdmin', 'isLoggedIn', 'bio')
 
-    def __init__(self, name, email, isAdmin, isLoggedIn, bio):
-        self.name = name
-        self.email = email
-        self.isAdmin = isAdmin
-        self.isLoggedIn = isLoggedIn
-        self.bio = bio
-
-
-
-
+users_schema = UserSchema(many=True)
 
 
 
